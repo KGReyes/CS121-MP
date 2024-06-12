@@ -1,7 +1,5 @@
 package com.example.CS121_MP.todolist;
 
-import com.example.CS121_MP.members.Members;
-import com.example.CS121_MP.members.MembersRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;

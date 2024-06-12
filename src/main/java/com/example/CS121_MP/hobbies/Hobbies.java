@@ -25,7 +25,6 @@ public class Hobbies {
     private String description;
     private String media;
 
-    //Add inheriting keys thing
     @ManyToOne
     @JoinColumn(name = "memberId", nullable = false)
     @JsonBackReference

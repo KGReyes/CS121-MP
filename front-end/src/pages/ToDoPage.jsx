@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 const ToDoPage = () => {
     const [todos, setTodos] = useState([]);
-    const [userName, setUserName] = useState('');
     const [newTodo, setNewTodo] = useState({ category: '', job: '', description: '' });
     const [filterCategory, setFilterCategory] = useState('all');
     const [selectedTodos, setSelectedTodos] = useState([]);
