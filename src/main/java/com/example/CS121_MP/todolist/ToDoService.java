@@ -51,14 +51,6 @@ public class ToDoService {
         todoRepository.save(todo);
     }
 
-    public void deleteToDo(Long todoId) {
-        boolean exists = todoRepository.existsById(todoId);
-        if(!exists) {
-            throw new IllegalStateException("ToDO Id " + todoId + " doesn't exist");
-        }
-        todoRepository.deleteById(todoId);
-    }
-
     public Optional<ToDo> getToDoByJob(String job) {
         return todoRepository.findToDoByJob(job);
     }
@@ -73,6 +65,14 @@ public class ToDoService {
 
         todo.setDone(done);
         todoRepository.save(todo);
+    }
+
+    public void deleteToDo(Long todoId) {
+        boolean exists = todoRepository.existsById(todoId);
+        if(!exists) {
+            throw new IllegalStateException("ToDo Id " + todoId + " doesn't exist");
+        }
+        todoRepository.deleteById(todoId);
     }
 
 }

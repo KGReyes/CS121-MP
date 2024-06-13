@@ -37,21 +37,39 @@ public class HobbiesConfig {
 
             Hobbies film = new Hobbies(
                     "Watching Films",
-                    "Just watching whatever",
+                    "I just like watching different genres of movie in general",
                     "https://i.ytimg.com/vi/Qm3R6e4b-SU/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBoh2tT2ojkPD8qgAO5ueAAJ1WxSg",
                     kofi
             );
 
+            Hobbies kofigaming = new Hobbies(
+                    "Gaming",
+                    "I like to stress myself for no reason at all",
+                    "https://i.kym-cdn.com/entries/icons/facebook/000/036/070/cover5.jpg",
+                    kofi
+            );
+
             Hobbies gaming = new Hobbies(
-                    "Playing Video Games",
-                    "Just playing stuff",
+                    "Gambl- I mean Gaming",
+                    "I like to pull for hot women in gacha games (save me)",
                     "https://preview.redd.it/firefly-is-special-v0-rf4ztx8v4gic1.jpeg?width=1080&format=pjpg&auto=webp&s=0a41f5071868a7d301e9a93358ac9a9657a2075e",
                     nico
             );
 
-            hobbiesRepository.saveAll(List.of(singing, drawing, film, gaming));
+            Hobbies reading = new Hobbies(
+                    "Reading",
+                    "Book good :DD",
+                    "https://i.imgflip.com/2/30lxol.jpg",
+                    nico
+            );
+
+            hobbiesRepository.saveAll(List.of(
+                    singing,
+                    drawing,
+                    film,
+                    gaming,
+                    reading,
+                    kofigaming));
         };
     }
 }
-
-//https://i.ytimg.com/vi/6oMUiZXYQC4/hqdefault.jpg

@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 @Entity
 @Table
 public class ToDo {
+
     @Id
     @SequenceGenerator(
             name = "todo_sequence",
@@ -29,7 +30,6 @@ public class ToDo {
         this.category = category;
         this.job = job;
         this.description = description;
-        //this.members = members;
     }
 
     @Override
@@ -40,7 +40,6 @@ public class ToDo {
                 ", job='" + job + '\'' +
                 ", description='" + description + '\'' +
                 ", done=" + done +
-                //", members=" + members +
                 '}';
     }
 
@@ -83,12 +82,4 @@ public class ToDo {
     public void setDone(boolean done) {
         this.done = done;
     }
-
-//    public Members getMembers() {
-//        return members;
-//    }
-//
-//    public void setMembers(Members members) {
-//        this.members = members;
-//    }
 }

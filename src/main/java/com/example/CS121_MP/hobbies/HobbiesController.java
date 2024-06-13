@@ -42,11 +42,6 @@ public class HobbiesController {
         return ResponseEntity.ok().body(new JsonObject());
     }
 
-//    @PostMapping
-//    public void registerNewMember(@RequestBody Hobbies hobbies) {
-//        hobbiesService.addHobby(hobbies);
-//    }
-
     @PutMapping(path = "/{hobbiesId}")
     public ResponseEntity<?> updateHobby(
             @PathVariable("hobbiesId") Long hobbiesId,

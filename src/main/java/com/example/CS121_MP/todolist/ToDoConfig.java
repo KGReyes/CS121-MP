@@ -33,7 +33,7 @@ public class ToDoConfig {
                     "I'm tired so sleep"
             );
 
-            todoRepository.saveAll(List.of(mpjob, gamejob, sleepjob));
+            //todoRepository.saveAll(List.of(mpjob, gamejob, sleepjob));
 
         };
     }

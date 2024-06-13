@@ -60,6 +60,5 @@ public class MembersService {
         if (name != null && !name.isEmpty() && !Objects.equals(members.getName(), name)) {
             members.setName(name);
         }
-        //members.setDob(dob);
     }
 }

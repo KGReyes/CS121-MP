@@ -1,26 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 const ToDoPage = () => {
-    const [todos, setTodos] = useState([]);
-    const [newTodo, setNewTodo] = useState({ category: '', job: '', description: '' });
+    const [toDo, setToDo] = useState([]);
+    const [newtoDo, setNewTodo] = useState({ category: '', job: '', description: '' });
     const [filterCategory, setFilterCategory] = useState('all');
-    const [selectedTodos, setSelectedTodos] = useState([]);
+    const [selectedtoDo, setSelectedTodos] = useState([]);
     const [error, setError] = useState('');
-
-    useEffect(() => {
-    });
 
     const fetchToDo = () => {
         fetch(`http://localhost:8080/api/v1/todo`)
             .then(response => response.json())
-            .then(data => setTodos(Array.isArray(data) ? data : []))
+            .then(data => setToDo(Array.isArray(data) ? data : []))
             .catch(error => setError('Error fetching todos: ' + error));
     };
 
-    const handleAddTodo = () => {
+    const handleAdd = () => {
         fetch(`http://localhost:8080/api/v1/todo`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ ...newTodo })
+            body: JSON.stringify({ ...newtoDo })
         })
             .then(() => {
                 setNewTodo({ category: '', job: '', description: '' });
@@ -29,8 +26,8 @@ const ToDoPage = () => {
             .catch(error => setError('Error adding todo: ' + error));
     };
 
-    const handleDeleteSelected = () => {
-        selectedTodos.forEach(todoId => {
+    const handleDeletion = () => {
+        selectedtoDo.forEach(todoId => {
             fetch(`http://localhost:8080/api/v1/todo/${todoId}`, {
                 method: 'DELETE'
             })
@@ -48,20 +45,22 @@ const ToDoPage = () => {
             .catch(error => setError('Error updating todo: ' + error));
     };
 
-    const filteredTodos = todos.filter(todo => {
+    const todoSelect = toDo.filter(todo => {
         if (filterCategory !== 'all') return todo.category === filterCategory;
         return true;
     });
 
-    const uniqueCategories = [...new Set(todos.map(todo => todo.category))];
+    const categorySelect = [...new Set(toDo.map(todo => todo.category))];
 
 
     return (
+        // This div covers generally the whole page under the navbar
         <div className="container mx-auto p-4">
             <h1 className="text-2xl mb-4 text-white">To-do List</h1>
             {error && <p className="text-red-500">{error}</p>}
+            {/*This div covers the delete and the drop down category menu*/}
             <div className="mb-4 flex space-x-2">
-                <button onClick={handleDeleteSelected} className="bg-red-500 text-white px-4 py-2 rounded">
+                <button onClick={handleDeletion} className="bg-red-500 text-white px-4 py-2 rounded">
                     Delete Selected
                 </button>
                 <select
@@ -70,11 +69,12 @@ const ToDoPage = () => {
                     className="border p-2 rounded"
                 >
                     <option value="all">All Labels</option>
-                    {uniqueCategories.map(category => (
+                    {categorySelect.map(category => (
                         <option key={category} value={category}>{category}</option>
                     ))}
                 </select>
             </div>
+            {/*This div covers the selection table go make it look fancee*/}
             <div className="overflow-x-auto">
                 <table className="min-w-full bg-white">
                     <thead>
@@ -86,18 +86,19 @@ const ToDoPage = () => {
                         <th className="py-2">Status</th>
                     </tr>
                     </thead>
+                    {/*tbody is the body of the table*/}
                     <tbody>
-                    {filteredTodos.map(todo => (
+                    {todoSelect.map(todo => (
                         <tr key={todo.id}>
                             <td className="border px-4 py-2">
                                 <input
                                     type="checkbox"
-                                    checked={selectedTodos.includes(todo.id)}
+                                    checked={selectedtoDo.includes(todo.id)}
                                     onChange={() => {
-                                        if (selectedTodos.includes(todo.id)) {
-                                            setSelectedTodos(selectedTodos.filter(id => id !== todo.id));
+                                        if (selectedtoDo.includes(todo.id)) {
+                                            setSelectedTodos(selectedtoDo.filter(id => id !== todo.id));
                                         } else {
-                                            setSelectedTodos([...selectedTodos, todo.id]);
+                                            setSelectedTodos([...selectedtoDo, todo.id]);
                                         }
                                     }}
                                 />
@@ -117,36 +118,41 @@ const ToDoPage = () => {
                     </tbody>
                 </table>
             </div>
+            {/*This div covers the form for adding a new to do*/}
             <div className="mt-4 bg-gray-800 p-4 rounded-lg">
                 <h2 className="text-lg mb-2 text-white">Add a new To Do</h2>
+                {/*This div covers the Category input*/}
                 <div className="mb-2">
                     <label className="block text-sm font-bold mb-1 text-white">Category</label>
                     <input
                         type="text"
-                        value={newTodo.category}
-                        onChange={e => setNewTodo({...newTodo, category: e.target.value})}
+                        value={newtoDo.category}
+                        onChange={e => setNewTodo({...newtoDo, category: e.target.value})}
                         className="border p-2 rounded w-full"
                     />
                 </div>
+                {/*This div covers the Job input*/}
                 <div className="mb-2">
                     <label className="block text-sm font-bold mb-1 text-white">Job</label>
                     <input
                         type="text"
-                        value={newTodo.job}
-                        onChange={e => setNewTodo({...newTodo, job: e.target.value})}
+                        value={newtoDo.job}
+                        onChange={e => setNewTodo({...newtoDo, job: e.target.value})}
                         className="border p-2 rounded w-full"
                     />
                 </div>
+                {/*This div covers the description of the job input*/}
                 <div className="mb-2">
                     <label className="block text-sm font-bold mb-1 text-white">Description</label>
                     <input
                         type="text"
-                        value={newTodo.description}
-                        onChange={e => setNewTodo({...newTodo, description: e.target.value})}
+                        value={newtoDo.description}
+                        onChange={e => setNewTodo({...newtoDo, description: e.target.value})}
                         className="border p-2 rounded w-full"
                     />
                 </div>
-                <button onClick={handleAddTodo} className="bg-blue-500 text-white px-4 py-2 rounded">
+                {/*Button to add the to-do from the form*/}
+                <button onClick={handleAdd} className="bg-blue-500 text-white px-4 py-2 rounded">
                     Add To do
                 </button>
             </div>

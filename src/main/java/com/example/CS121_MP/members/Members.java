@@ -12,6 +12,7 @@ import java.util.List;
 @Entity
 @Table
 public class Members {
+
     @Id
     @SequenceGenerator(
             name = "member_sequence",
@@ -31,7 +32,6 @@ public class Members {
     @Transient
     private int age;
 
-    //Map to the other categories here
     @OneToMany (mappedBy = "members", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private List<Hobbies> hobbies;

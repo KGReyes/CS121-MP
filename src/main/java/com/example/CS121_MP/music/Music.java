@@ -7,6 +7,7 @@ import jakarta.persistence.*;
 @Entity
 @Table
 public class Music {
+
     @Id
     @SequenceGenerator(
             name = "music_sequence",

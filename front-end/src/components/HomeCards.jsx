@@ -4,8 +4,11 @@ const HomeCards = () => {
     return (
 
             <section className="py-4">
+                {/*This entire thing is inside the 1 section*/}
                 <div className="container-xl lg:container m-auto">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 rounded-lg">
+                        {/*Each Card corresponds to one of the parts with the Hobbies/Music/To-Do labels*/}
+                        {/*Each Card is also their own object or file, look at the Card.jsx*/}
                         <Card>
                             <h2 className="text-2xl font-bold">Hobbies</h2>
                             <p className="mt-2 mb-4">
