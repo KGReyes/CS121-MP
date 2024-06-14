@@ -67,8 +67,8 @@ public class HobbiesConfig {
                     isareading,
                     isagaming,
                     film,
-                    gaming,
                     reading,
+                    gaming,
                     kofigaming));
         };
     }
