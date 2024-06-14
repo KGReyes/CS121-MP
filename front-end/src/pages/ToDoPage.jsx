@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 const ToDoPage = () => {
     const [toDo, setToDo] = useState([]);
-    const [newtoDo, setNewTodo] = useState({ category: '', job: '', description: '' });
+    const [newtoDo, setNewTodo] = useState({ category: '#', job: '', description: '' });
     const [filterCategory, setFilterCategory] = useState('all');
     const [selectedtoDo, setSelectedTodos] = useState([]);
     const [error, setError] = useState('');
@@ -20,7 +20,7 @@ const ToDoPage = () => {
             body: JSON.stringify({ ...newtoDo })
         })
             .then(() => {
-                setNewTodo({ category: '', job: '', description: '' });
+                setNewTodo({ category: '#', job: '', description: '' });
                 fetchToDo();
             })
             .catch(error => setError('Error adding todo: ' + error));
@@ -80,9 +80,9 @@ const ToDoPage = () => {
                     <thead>
                     <tr>
                         <th className="py-2">Select</th>
-                        <th className="py-2">Label</th>
                         <th className="py-2">Job</th>
                         <th className="py-2">Description</th>
+                        <th className="py-2">Label</th>
                         <th className="py-2">Status</th>
                     </tr>
                     </thead>
@@ -103,9 +103,9 @@ const ToDoPage = () => {
                                     }}
                                 />
                             </td>
-                            <td className="border px-4 py-2">{todo.category}</td>
                             <td className="border px-4 py-2">{todo.job}</td>
                             <td className="border px-4 py-2">{todo.description}</td>
+                            <td className="border px-4 py-2">{todo.category}</td>
                             <td className="border px-4 py-2">
                                 <input
                                     type="checkbox"
@@ -120,17 +120,7 @@ const ToDoPage = () => {
             </div>
             {/*This div covers the form for adding a new to do*/}
             <div className="mt-4 bg-gray-800 p-4 rounded-lg">
-                <h2 className="text-lg mb-2 text-white">Add a new To Do</h2>
-                {/*This div covers the Category input*/}
-                <div className="mb-2">
-                    <label className="block text-sm font-bold mb-1 text-white">Category</label>
-                    <input
-                        type="text"
-                        value={newtoDo.category}
-                        onChange={e => setNewTodo({...newtoDo, category: e.target.value})}
-                        className="border p-2 rounded w-full"
-                    />
-                </div>
+                <h2 className="text-lg mb-2 text-white">Add to the list | Make sure each job is unique, or else it won't be added!</h2>
                 {/*This div covers the Job input*/}
                 <div className="mb-2">
                     <label className="block text-sm font-bold mb-1 text-white">Job</label>
@@ -148,6 +138,16 @@ const ToDoPage = () => {
                         type="text"
                         value={newtoDo.description}
                         onChange={e => setNewTodo({...newtoDo, description: e.target.value})}
+                        className="border p-2 rounded w-full"
+                    />
+                </div>
+                {/*This div covers the Category input*/}
+                <div className="mb-2">
+                    <label className="block text-sm font-bold mb-1 text-white">Label</label>
+                    <input
+                        type="text"
+                        value={newtoDo.category}
+                        onChange={e => setNewTodo({...newtoDo, category: e.target.value})}
                         className="border p-2 rounded w-full"
                     />
                 </div>
