@@ -1,5 +1,6 @@
 import SpotifyPlayer from "../SpotifyPlayer.jsx";
 import React, { useState, useEffect } from 'react';
+import Footer from "../components/Footer.jsx";
 
 const MusicPage = ({isaId = 1, kofiId = 2, nicoId = 3}) => {
 
@@ -44,7 +45,7 @@ const MusicPage = ({isaId = 1, kofiId = 2, nicoId = 3}) => {
     }, [isaId, kofiId, nicoId]);
 
     return (
-        <>front
+        <>
             {/*Each member has their own section tag here too*/}
             <section>
                 <div className="m-5 flex max-h-fit bg-cream-0 rounded-lg shadow-lg">
@@ -56,7 +57,7 @@ const MusicPage = ({isaId = 1, kofiId = 2, nicoId = 3}) => {
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                             {isaMusic.map(music => (
                                 // Each song will get their own div arrangement, etc.
-                                <div key={music.id} className="border p-4 rounded-lg">
+                                <div key={music.id} className="bg-cream-1 border p-4 border-cream-1 rounded-lg flex flex-col items-center text-center">
                                     <strong>{music.title}</strong>
                                     <div>by {music.artist} - {music.album}</div>
                                     <div className="m-1">
@@ -79,10 +80,10 @@ const MusicPage = ({isaId = 1, kofiId = 2, nicoId = 3}) => {
                         <h1 className="text-2xl mb-4">{kofiName}'s Top 5 Songs of 2024</h1>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                             {kofiMusic.map(music => (
-                                <div key={music.id} className="border p-4 rounded-lg">
+                                <div key={music.id} className="bg-cream-1 border p-4 border-cream-1 rounded-lg flex flex-col items-center text-center">
                                     <strong>{music.title}</strong>
                                     <div>by {music.artist} - {music.album}</div>
-                                    <div className="m-1">
+                                    <div className="items-center m-2">
                                         <img src={music.albumart} width={250} height={250}
                                              alt={`${music.title} album art`}/>
                                     </div>
@@ -102,12 +103,12 @@ const MusicPage = ({isaId = 1, kofiId = 2, nicoId = 3}) => {
                         <h1 className="text-2xl mb-4">{nicoName}'s Top 5 Songs of 2024</h1>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                             {nicoMusic.map(music => (
-                                <div key={music.id} className="border p-4 rounded-lg">
+                                <div key={music.id} className="bg-cream-1 border p-4 border-cream-1 rounded-lg flex flex-col items-center text-center">
                                     <strong>{music.title}</strong>
                                     <div>by {music.artist} - {music.album}</div>
                                     <div className="m-1">
                                         <img src={music.albumart} width={250} height={250}
-                                             alt={`${music.title} album art`}/>
+                                             alt={`${music.title} album art`} className= ""/>
                                     </div>
                                     <SpotifyPlayer
                                         embedLink={`https://open.spotify.com/embed/track/${music.spotify.split('track/')[1].split('?')[0]}`}/>
@@ -118,15 +119,7 @@ const MusicPage = ({isaId = 1, kofiId = 2, nicoId = 3}) => {
                 </div>
             </section>
 
-            <section>
-                <div className=" flex max-h-screen bg-beige">
-                    <div className="mx-4 text-end">
-                        <p className="text-xl text-off-white">
-                            CMSC 121: GROUP 1 | Aguinaldo | Ferrer | Reyes
-                        </p>
-                    </div>
-                </div>
-            </section>
+            <Footer />
         </>
     )
 };
