@@ -59,7 +59,7 @@ const HobbiesPage = ({isaId = 1, kofiId = 2, nicoId = 3}) => {
                                 <p>{hobby.description}</p>
                                 <div>
                                     {hobby.media ? (
-                                        <img src={hobby.media} alt={`${hobby.name} media`} className="w-full h-auto"/>
+                                        <img src={hobby.media} alt={`${hobby.name}  media`} className="w-full h-auto"/>
                                     ) : (
                                         <p>No media available</p>
                                     )}

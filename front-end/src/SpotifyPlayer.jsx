@@ -5,9 +5,9 @@ const SpotifyPlayer = ({ embedLink }) => {
         <div className="spotify-player mt-2">
             <iframe
                 src={embedLink}
-                width="100%"
+                width="70%"
                 height="80"
-                frameBorder="0"
+                frameBorder="5"
                 allowtransparency="true"
                 allow="encrypted-media"
                 title="Spotify Player"

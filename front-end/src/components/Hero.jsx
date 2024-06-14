@@ -1,45 +1,72 @@
+import logo from "../assets/images/logo.png";
 const Hero = () => {
     return (
         <>
-            {/*Each section is a division between the members, maybe try adding bg colors to the divs to tell which is which*/}
-            <section className="bg-indigo-700 py-20 mb-4">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
-                    <div className="text-center">
-                        <h1 className="text-4xl font-extrabold text-white sm:text-5xl md:text-6xl">
-                            Isabella Aguinaldo
-                        </h1>
-                        <p className="my-4 text-xl text-white">
-                            Hi! I'm Isabella
-                        </p>
+                <section>
+                    <div className="m-5 flex max-h-screen bg-cream-0 rounded-lg shadow-lg">
+                        <img
+                            className="m-5 h-auto w-auto"
+                            src={logo}
+                            alt="placeholder"
+                        />
+                        <div className="text-start">
+                            <h1 className="m-2 text-4xl font-extrabold text-off-white sm:text-5xl md:text-6xl">
+                                Isabella Aguinaldo
+                            </h1>
+                            <p className="m-2 text-xl text-off-white">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut
+                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco
+                                laboris nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            <section className="bg-indigo-700 py-20 mb-4">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
-                    <div className="text-center">
-                        <h1 className="text-4xl font-extrabold text-white sm:text-5xl md:text-6xl">
-                            Nico Ferrer
-                        </h1>
-                        <p className="my-4 text-xl text-white">
-                            Hi! I'm Nico
-                        </p>
+                <section>
+                    <div className="m-5 flex max-h-screen bg-cream-2 rounded-lg shadow-lg">
+                        <div className="text-end">
+                            <h1 className="m-2 text-4xl font-extrabold text-off-white sm:text-5xl md:text-6xl">
+                                Kofi Reyes
+                            </h1>
+                            <p className="m-2 text-xl text-off-white ">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut
+                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco
+                                laboris nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                        </div>
+                        <img
+                            className="m-5 h-auto w-auto"
+                            src={logo}
+                            alt="placeholder"
+                        />
                     </div>
-                </div>
-            </section>
+                </section>
 
-            <section className="bg-indigo-700 py-20 mb-4">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
-                    <div className="text-center">
-                        <h1 className="text-4xl font-extrabold text-white sm:text-5xl md:text-6xl">
-                            Kofi Reyes
-                        </h1>
-                        <p className="my-4 text-xl text-white">
-                            Hi! I'm Kofi
-                        </p>
+                <section>
+                    <div className="m-5 flex max-h-screen bg-cream-0 rounded-lg shadow-lg">
+                        <img
+                            className="m-5 h-auto w-auto"
+                            src={logo}
+                            alt="placeholder"
+                        />
+                        <div className="text-start">
+                            <h1 className="m-2 text-4xl font-extrabold text-off-white sm:text-5xl md:text-6xl">
+                                Nico Ferrer
+                            </h1>
+                            <p className="m-2 text-xl text-off-white ">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut
+                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco
+                                laboris nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
         </>
     );
 };

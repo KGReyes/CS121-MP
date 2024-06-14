@@ -6,6 +6,15 @@ const HomePage = () => {
         <>
             <Hero />
             <HomeCards />
+            <section>
+                <div className=" flex max-h-screen bg-beige">
+                    <div className="mx-4 text-end">
+                        <p className= "text-xl text-off-white">
+                             CMSC 121: GROUP 1 | Aguinaldo | Ferrer | Reyes
+                        </p>
+                    </div>
+                </div>
+            </section>
         </>
     );
 };
