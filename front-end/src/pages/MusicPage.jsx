@@ -1,6 +1,5 @@
 import SpotifyPlayer from "../SpotifyPlayer.jsx";
 import React, { useState, useEffect } from 'react';
-import Footer from "../components/Footer.jsx";
 
 const MusicPage = ({isaId = 1, kofiId = 2, nicoId = 3}) => {
 
@@ -122,8 +121,6 @@ const MusicPage = ({isaId = 1, kofiId = 2, nicoId = 3}) => {
                     </div>
                 </div>
             </section>
-
-            <Footer/>
         </>
     )
 };

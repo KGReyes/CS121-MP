@@ -1,5 +1,4 @@
 import {useEffect, useState} from "react";
-import Footer from "../components/Footer.jsx";
 
 const HobbiesPage = ({isaId = 1, kofiId = 2, nicoId = 3}) => {
 
@@ -89,7 +88,6 @@ const HobbiesPage = ({isaId = 1, kofiId = 2, nicoId = 3}) => {
                     </div>
                 </div>
             </section>
-            <Footer/>
         </>
     );
 };
