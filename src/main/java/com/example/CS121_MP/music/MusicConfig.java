@@ -112,12 +112,48 @@ public class MusicConfig {
                     nico
             );
 
-            Music smart = new Music (
-                    "SMART",
-                    "EASY",
-                    "LE SSERAFIM",
-                    "https://upload.wikimedia.org/wikipedia/en/c/cb/Le_Sserafim_-_Smart.png",
-                    "https://open.spotify.com/track/4lR8sYGMGZPvthF2yUfo7T?si=bbc7e22afbf44167",
+            Music prom = new Music (
+                    "Prom",
+                    "Ctrl (Deluxe)",
+                    "SZA",
+                    "https://images.genius.com/32d4c8dc502bde05ccf66701a098cb49.1000x1000x1.jpg",
+                    "https://open.spotify.com/track/5MffAkbuTPBqRdPuPzaEb5?si=f686aa129a954a5e",
+                    isa
+            );
+
+            Music autumn = new Music (
+                    "Autumn",
+                    "Nicole",
+                    "NIKI",
+                    "https://upload.wikimedia.org/wikipedia/en/1/1d/Nicole_%28Album%29_cover.png",
+                    "https://open.spotify.com/track/7tKK8AGJ6Nfefm829JwLgr?si=e992edf81e1d4d82",
+                    isa
+            );
+
+            Music dance = new Music (
+                    "I Wanna Dance with Somebody (Who Loves Me)",
+                    "Whitney",
+                    "Whitney Houston",
+                    "https://upload.wikimedia.org/wikipedia/en/1/15/Whitney_Houston_-_Whitney.png",
+                    "https://open.spotify.com/track/2tUBqZG2AbRi7Q0BIrVrEj?si=7c25e0b27c344f14",
+                    isa
+            );
+
+            Music girls = new Music (
+                    "Girls Just Want To Have Fun",
+                    "She’s So Unusual",
+                    "Cyndi Lauper",
+                    "https://upload.wikimedia.org/wikipedia/en/0/09/ShesSoUnusual1984.PNG",
+                    "https://open.spotify.com/track/4y1LsJpmMti1PfRQV9AWWe?si=6e28c730a61e4d79",
+                    isa
+            );
+
+            Music whatsnew = new Music (
+                    "What’s New",
+                    "Good News",
+                    "Megan Thee Stallion",
+                    "https://upload.wikimedia.org/wikipedia/en/b/bb/Megan_Thee_Stallion_-_Good_News.png",
+                    "https://open.spotify.com/track/3jRHehB5ulTMKfK5WaqDqc?si=3568b3dc642b49a6",
                     isa
             );
 
@@ -132,7 +168,11 @@ public class MusicConfig {
                     show,
                     crime,
                     stopbreaking,
-                    smart));
+                    prom,
+                    autumn,
+                    girls,
+                    dance,
+                    whatsnew));
         };
     }
 

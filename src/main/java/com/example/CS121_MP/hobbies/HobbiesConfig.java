@@ -21,17 +21,17 @@ public class HobbiesConfig {
             Members kofi = membersRepository.findMembersByUsername("Koffers101").orElseThrow(() -> new IllegalStateException(("User not found")));
             Members nico = membersRepository.findMembersByUsername("Uh").orElseThrow(() -> new IllegalStateException(("User not found")));
 
-            Hobbies singing = new Hobbies(
-                  "Singing",
-                  "Just singing any songs really",
-                  "https://cdn.prod.website-files.com/655e0fa544c67c1ee5ce01c7/655e0fa544c67c1ee5ce0f3f_9-vocal-warm-ups.webp",
+            Hobbies isareading = new Hobbies(
+                  "Reading",
+                  "I like to read non-academic nerdy stuff like manga and novels. The occasional webtoon, maybe.",
+                  "https://i.pinimg.com/564x/70/13/36/7013360ab9a6ec6c644166b07b16f418.jpg",
                   isa
             );
 
-            Hobbies drawing = new Hobbies(
-                    "Drawing",
-                    "Drawing is life",
-                    "https://www.shihoriobata.com/wp-content/uploads/2021/09/fox-drawing-easy-web.jpg",
+            Hobbies isagaming = new Hobbies(
+                    "Gaming",
+                    "Grinding childhood video games like classic Plants vs Zombies and Flipline Studio games. I miss you forever, Moshi Monsters. Come back please.",
+                    "https://i.pinimg.com/564x/ad/c2/2f/adc22f43c5bcc721e32618325dfc1f53.jpg",
                     isa
             );
 
@@ -64,8 +64,8 @@ public class HobbiesConfig {
             );
 
             hobbiesRepository.saveAll(List.of(
-                    singing,
-                    drawing,
+                    isareading,
+                    isagaming,
                     film,
                     gaming,
                     reading,
