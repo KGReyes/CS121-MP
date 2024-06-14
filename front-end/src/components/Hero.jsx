@@ -1,12 +1,14 @@
-import logo from "../assets/images/logo.png";
+import kcs2 from "../assets/images/kocosa-02.png";
+import kcs3 from "../assets/images/kocosa-03.png";
+import kcs4 from "../assets/images/kocosa-04.png";
 const Hero = () => {
     return (
         <>
                 <section>
                     <div className="m-5 flex max-h-screen bg-cream-0 rounded-lg shadow-lg">
                         <img
-                            className="m-5 h-auto w-auto"
-                            src={logo}
+                            className="m-5 h-60 w-auto"
+                            src={kcs4}
                             alt="placeholder"
                         />
                         <div className="text-start">
@@ -39,8 +41,8 @@ const Hero = () => {
                             </p>
                         </div>
                         <img
-                            className="m-5 h-auto w-auto"
-                            src={logo}
+                            className="m-5 h-60 w-auto"
+                            src={kcs2}
                             alt="placeholder"
                         />
                     </div>
@@ -49,8 +51,8 @@ const Hero = () => {
                 <section>
                     <div className="m-5 flex max-h-screen bg-cream-0 rounded-lg shadow-lg">
                         <img
-                            className="m-5 h-auto w-auto"
-                            src={logo}
+                            className="m-5 h-60 w-auto"
+                            src={kcs3}
                             alt="placeholder"
                         />
                         <div className="text-start">

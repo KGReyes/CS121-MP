@@ -20,6 +20,10 @@ export default {
         'cream-4': '#a18d68',
         'new-cream':'#fad4c0',
         'lav':'#c8a2c8',
+        'grey' : '#454545',
+        'bright-orange' : '#FF6000',
+        'orange' : '#FFA559',
+        'creamsicle' : '#FFE6C7',
       },
       fontFamily: {
         sans: ['Roboto', 'sans-serif']

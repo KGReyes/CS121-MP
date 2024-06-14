@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+import Footer from "../components/Footer.jsx";
 
 const HobbiesPage = ({isaId = 1, kofiId = 2, nicoId = 3}) => {
 
@@ -44,71 +45,42 @@ const HobbiesPage = ({isaId = 1, kofiId = 2, nicoId = 3}) => {
 
     return (
         <>
-            {/*Each member is inside their own section tag*/}
-            <section className="bg-indigo-100 py-4 mb-4">
-                {/*This div is just a div within the section encompassing the things under it*/}
-                <div className="container mx-auto p-4">
-                    <h1 className="text-2xl mb-4">Hobbies for {isaName}</h1>
-                    {/*Each div like this encompasses the space all the hobbies will take*/}
-                    {/*Should automatically adjust cuz of the grid thing so mess around with it I guess*/}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                        {isaHobbies.map(hobby => (
-                            // Each hobby will get their own div arrangement, etc.
-                            <div key={hobby.id} className="border p-4 rounded-lg">
-                                <strong>{hobby.name}</strong>
-                                <p>{hobby.description}</p>
-                                <div>
-                                    {hobby.media ? (
-                                        <img src={hobby.media} alt={`${hobby.name}  media`} className="w-full h-auto"/>
-                                    ) : (
-                                        <p>No media available</p>
-                                    )}
+            <section className="bg-indigo-100 py-4">
+                <div className="container mx-auto px-4">
+                    <div className="grid md:grid-cols-3 gap-14">
+                        {[isaHobbies, kofiHobbies, nicoHobbies].map((hobbies, index) => (
+                            <div className="flex flex-col space-y-4" key={index}>
+                                <h1 className="text-2xl mb-4 text-center w-full">
+                                    {index === 0 ? isaName : index === 1 ? kofiName : nicoName}'s Hobbies
+                                </h1>
+                                <div className="flex flex-col space-y-4 flex-1">
+                                    {hobbies.map(hobby => (
+                                        <div key={hobby.id}
+                                             className="bg-white border border-gray-200 p-4 rounded-lg shadow flex flex-col flex-1">
+                                            <strong className="block font-semibold">{hobby.name}</strong>
+                                            <p className="text-gray-600 text-sm flex-1">{hobby.description}</p>
+                                            <div className="relative w-full overflow-hidden rounded-lg mt-2"
+                                                 style={{paddingBottom: '100%'}}>
+                                                <div
+                                                    className="absolute top-0 left-0 w-full h-full flex justify-center items-center">
+                                                    {hobby.media ? (
+                                                        <img src={hobby.media} alt={`${hobby.name} media`}
+                                                             className="object-cover w-full h-full"/>
+                                                    ) : (
+                                                        <div className="text-center text-gray-400">No media
+                                                            available</div>
+                                                    )}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
                         ))}
                     </div>
                 </div>
             </section>
-            <section className="bg-purple-100 py-4 mb-4">
-                <div className="container mx-auto p-4">
-                    <h1 className="text-2xl mb-4">Hobbies for {kofiName}</h1>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                        {kofiHobbies.map(hobby => (
-                            <div key={hobby.id} className="border p-4 rounded-lg">
-                                <strong>{hobby.name}</strong>
-                                <p>{hobby.description}</p>
-                                <div>
-                                    {hobby.media ? (
-                                        <img src={hobby.media} alt={`${hobby.name} media`} className="w-full h-auto"/>
-                                    ) : (
-                                        <p>No media available</p>
-                                    )}
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-            <section className="bg-green-100 py-4 mb-4">
-                <div className="container mx-auto p-4">
-                    <h1 className="text-2xl mb-4">Hobbies for {nicoName}</h1>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                        {nicoHobbies.map(hobby => (
-                            <div key={hobby.id} className="border p-4 rounded-lg">
-                                <strong>{hobby.name}</strong>
-                                <p>{hobby.description}</p>
-                                <div>
-                                    {hobby.media ? (
-                                        <img src={hobby.media} alt={`${hobby.name} media`} className="w-full h-auto"/>
-                                    ) : (
-                                        <p>No media available</p>
-                                    )}
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+            <Footer/>
         </>
     );
 };
