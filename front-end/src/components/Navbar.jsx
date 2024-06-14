@@ -6,13 +6,13 @@ const Navbar = () => {
     //changed palette to make navbar more coffee(kofi) themed lamaw
 
     const linkClass = ({isActive}) =>
-        isActive ? 'bg-off-white  text-rust hover:bg-off-white  hover:text-rust rounded-md px-3 py-2'
-            : 'text-rust hover:bg-off-white hover:text-rust rounded-md px-3 py-2'
+        isActive ? 'bg-orange text-grey hover:bg-beige hover:text-grey rounded-md px-3 py-2'
+            : 'text-off-white hover:bg-beige hover:text-grey rounded-md px-3 py-2'
 
     return(
     <>
         {/*The entire navbar is under the nav tag*/}
-        <nav className="bg-beige">
+        <nav className="bg-grey">
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                 <div className="flex h-20 items-center justify-between">
                     <div className="flex flex-1 justify-center md:items-stretch md:justify-start">
@@ -25,7 +25,7 @@ const Navbar = () => {
                                 src={logo}
                                 alt="React Jobs"
                             />
-                            <span className="hidden md:block text-rust font-bold ml-2">
+                            <span className="hidden md:block text-off-white text-3xl font-bold ml-2">
                                 CS-121 MP
                             </span>
                         </NavLink>

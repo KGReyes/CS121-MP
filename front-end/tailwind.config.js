@@ -26,7 +26,9 @@ export default {
         'creamsicle' : '#FFE6C7',
       },
       fontFamily: {
-        sans: ['Roboto', 'sans-serif']
+        'sans': ['Roboto', 'sans-serif'],
+        'inter': ['"Inter"', 'sans-serif'],
+        'press': ['"Press Start 2P"', 'system-ui'],
       },
       gridTemplateColumns: {
         '70/30': '70% 28%',

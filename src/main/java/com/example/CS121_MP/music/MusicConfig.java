@@ -104,7 +104,7 @@ public class MusicConfig {
             );
 
             Music stopbreaking = new Music (
-                    "If I can Stop One Heart From Breaking",
+                    "If I Can Stop One Heart From Breaking",
                     "INSIDE ",
                     "Robin",
                     "https://pbs.twimg.com/media/GNHZLsOWwAEH_ry.jpg:large",

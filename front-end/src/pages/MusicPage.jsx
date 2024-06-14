@@ -47,17 +47,20 @@ const MusicPage = ({isaId = 1, kofiId = 2, nicoId = 3}) => {
     return (
         <>
             {/*Each member has their own section tag here too*/}
-            <section>
-                <div className="m-5 flex max-h-fit bg-cream-0 rounded-lg shadow-lg">
+            <section className="bg-cream-0">
+                <div className="m-1 flex max-h-fit bg-cream-0 rounded-lg shadow-lg">
                     {/*This div is just a div within the section encompassing the things under it*/}
                     <div className="container mx-auto p-4">
-                        <h1 className="text-2xl mb-4">{isaName}'s Top 5 Songs of 2024</h1>
+                        <h1 className="m-2 text-center text-3xl font-press mb-4">
+                            {isaName}'s Top 5 Songs of 2024
+                        </h1>
                         {/*Each div like this encompasses the space all the songs will take*/}
                         {/*Should automatically adjust cuz of the grid thing so mess around with it I guess*/}
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                             {isaMusic.map(music => (
                                 // Each song will get their own div arrangement, etc.
-                                <div key={music.id} className="bg-cream-1 border p-4 border-cream-1 rounded-lg flex flex-col items-center text-center">
+                                <div key={music.id}
+                                     className="bg-creamsicle border p-4 border-cream-1 rounded-lg flex flex-col items-center text-center">
                                     <strong>{music.title}</strong>
                                     <div>by {music.artist} - {music.album}</div>
                                     <div className="m-1">
@@ -72,15 +75,16 @@ const MusicPage = ({isaId = 1, kofiId = 2, nicoId = 3}) => {
                         </div>
                     </div>
                 </div>
-            </section>
 
-            <section>
-                <div className="m-5 flex max-h-fit bg-cream-0 rounded-lg shadow-lg">
+                <div className="flex max-h-fit bg-cream-0 rounded-lg shadow-lg">
                     <div className="container mx-auto p-4">
-                        <h1 className="text-2xl mb-4">{kofiName}'s Top 5 Songs of 2024</h1>
+                        <h1 className="m-2 text-center text-3xl font-press mb-4">
+                            {kofiName}'s Top 5 Songs of 2024
+                        </h1>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                             {kofiMusic.map(music => (
-                                <div key={music.id} className="bg-cream-1 border p-4 border-cream-1 rounded-lg flex flex-col items-center text-center">
+                                <div key={music.id}
+                                     className="bg-cream-1 border p-4 border-cream-1 rounded-lg flex flex-col items-center text-center">
                                     <strong>{music.title}</strong>
                                     <div>by {music.artist} - {music.album}</div>
                                     <div className="items-center m-2">
@@ -94,21 +98,21 @@ const MusicPage = ({isaId = 1, kofiId = 2, nicoId = 3}) => {
                         </div>
                     </div>
                 </div>
-            </section>
 
-
-            <section>
-                <div className="m-5 flex max-h-fit bg-cream-0 rounded-lg shadow-lg">
+                <div className="m-1 flex max-h-fit bg-cream-0 rounded-lg shadow-lg">
                     <div className="container mx-auto p-4">
-                        <h1 className="text-2xl mb-4">{nicoName}'s Top 5 Songs of 2024</h1>
+                        <h1 className="m-2 text-center text-3xl font-press mb-4">
+                            {nicoName}'s Top 5 Songs of 2024
+                        </h1>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                             {nicoMusic.map(music => (
-                                <div key={music.id} className="bg-cream-1 border p-4 border-cream-1 rounded-lg flex flex-col items-center text-center">
+                                <div key={music.id}
+                                     className="bg-beige border p-4 border-cream-1 rounded-lg flex flex-col items-center text-center">
                                     <strong>{music.title}</strong>
                                     <div>by {music.artist} - {music.album}</div>
                                     <div className="m-1">
                                         <img src={music.albumart} width={250} height={250}
-                                             alt={`${music.title} album art`} className= ""/>
+                                             alt={`${music.title} album art`} className=""/>
                                     </div>
                                     <SpotifyPlayer
                                         embedLink={`https://open.spotify.com/embed/track/${music.spotify.split('track/')[1].split('?')[0]}`}/>
@@ -119,7 +123,7 @@ const MusicPage = ({isaId = 1, kofiId = 2, nicoId = 3}) => {
                 </div>
             </section>
 
-            <Footer />
+            <Footer/>
         </>
     )
 };
