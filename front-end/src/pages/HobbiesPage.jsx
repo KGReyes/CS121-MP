@@ -51,7 +51,7 @@ const HobbiesPage = ({isaId = 1, kofiId = 2, nicoId = 3}) => {
                         {[isaHobbies, kofiHobbies, nicoHobbies].map((hobbies, index) => (
                             <div className="p-6 bg-cream-1 rounded-lg shadow-lg" key={index}>
                                 <div className="flex flex-col space-y-4">
-                                    <h1 className="text-2xl mb-4 text-center font-mono w-full">
+                                    <h1 className="text-l mb-4 text-center font-press w-full">
                                         {index === 0 ? isaName : index === 1 ? kofiName : nicoName}'s Hobbies
                                     </h1>
                                     <div className="flex flex-col space-y-4 flex-1">

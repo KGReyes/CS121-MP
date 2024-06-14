@@ -1,5 +1,4 @@
 import {NavLink} from 'react-router-dom';
-import logo from '../assets/images/logo.png'
 const Navbar = () => {
 
     // This method is just to add the black highlight on the navbar
@@ -20,11 +19,6 @@ const Navbar = () => {
                         <NavLink
                             className="flex flex-shrink-0 items-center mr-4"
                             to="/">
-                            <img
-                                className="h-10 w-auto"
-                                src={logo}
-                                alt="React Jobs"
-                            />
                             <span className="hidden md:block text-off-white text-3xl font-bold ml-2">
                                 CS-121 MP
                             </span>
